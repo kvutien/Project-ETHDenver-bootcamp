@@ -39,13 +39,79 @@ I clone the repo locally in my hard disk to ease development.
   ```
   kvutien@MBP21VTK Project-ETHDenver-bootcamp % code .
   ```
-* Make the changes save, test, commit and push to your own Github repository
+# Locally change, save, merge and push back to the remote git
+Make the changes save, test, commit and push to your own Github repository. List of commands:
   ```
   git status
   git add -A
   git commit -m "what changes you did"
-  git push origin main
+  git checkout main
+  git merge "your branch"
+  git push
+  ```
+  Practical example (long)
+  
+*  Check git status
+  ```
+  kvutien@MBP21VTK Project-ETHDenver-bootcamp % git status
+  On branch VTK
+  Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+    
+	modified:   README.md
+
+  Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+    
+    session_1/
+    
+    no changes added to commit (use "git add" and/or "git commit -a")
+  ```
+*  Add the changes and commit locally
 
   ```
+  kvutien@MBP21VTK Project-ETHDenver-bootcamp % git add -A
+  kvutien@MBP21VTK Project-ETHDenver-bootcamp % git commit -m  "session 1"
+  [VTK 1fede1e] session 1
+   4 files changed, 73 insertions(+)
+    create mode 100644 session_1/20221018 ETH Denver S1 homework.png
+    create mode 100644 session_1/20221018 ETH Denver S1 homework.pptx
+    create mode 100644 session_1/README_1.md
+  ```
+*  Switch the the branch `main`
+
+  ```
+    kvutien@MBP21VTK Project-ETHDenver-bootcamp % git checkout main
+    Switched to branch 'main'
+    Your branch is up to date with 'origin/main'.
+  ```
+*  Merge locally the branch VTK with the branch `main`
+
+  ```
+  kvutien@MBP21VTK Project-ETHDenver-bootcamp % git merge VTK
+  Updating 2423751..1fede1e
+  Fast-forward
+    README.md                                      |  49 ++++++++++++++++++++++++++++++++++++++++++++++++
+    session_1/20221018 ETH Denver S1 homework.png  | Bin 0 -> 307878 bytes
+    session_1/20221018 ETH Denver S1 homework.pptx | Bin 0 -> 510727 bytes
+    session_1/README_1.md                          |  24 ++++++++++++++++++++++++
+    4 files changed, 73 insertions(+)
+    create mode 100644 session_1/20221018 ETH Denver S1 homework.png
+    create mode 100644 session_1/20221018 ETH Denver S1 homework.pptx
+    create mode 100644 session_1/README_1.md
+  ```
+*  Push the local git to the Github repo
+  ```
+  kvutien@MBP21VTK Project-ETHDenver-bootcamp % git push 
+  Counting objects: 7, done.
+  Delta compression using up to 10 threads.
+  Compressing objects: 100% (7/7), done.
+  Writing objects: 100% (7/7), 780.64 KiB | 28.91 MiB/s, done.
+  Total 7 (delta 0), reused 0 (delta 0)
+  To https://github.com/kvutien/Project-ETHDenver-bootcamp.git
+     2423751..1fede1e  main -> main
+  ```
+
 # Session 1, 17 Oct 2022
 See corresponding folder
