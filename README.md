@@ -5,6 +5,8 @@ Notes, homework, development for the Solidity bootcamp of ETHDenver, run by Enco
 ## Check version of tools
 * I'm on a Macbook Pro M1 chip, running macOS Monterey 12.6.
 * Update Hardhat, Solidity, VSCode (1.71.2), NodeJS, git (2.15.1). I might need to update my git with my Homebrew.
+## Use the Notion pages of Encode.club
+This section of Notion hosts all courseware: https://encodeclub.notion.site/ETHDenver-Bootcamp-e895531f5e4540278ab4bde62e1aac0a
 ## Prepare Github
 Open Github. Login to my account. Go to tab "Repositories". Click on button "New".
 
