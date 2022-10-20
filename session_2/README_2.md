@@ -1,5 +1,5 @@
-# Session 1, Project-ETHDenver-bootcamp
-17 October 2022
+# Session 2, Project-ETHDenver-bootcamp
+18 October 2022
 # Zoom session
 
 * 157 attendants

@@ -119,3 +119,5 @@ Make the changes save, test, commit and push to your own Github repository. List
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_1)
 # Session 2, 18 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_2)
+# Session 3, 19 Oct 2022
+See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_3)
