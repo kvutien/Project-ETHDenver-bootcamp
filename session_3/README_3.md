@@ -25,5 +25,4 @@ _**Add a variable to hold the address of the deployer of the contract, update th
 
 _**Write an external function to return address `0x000000000000000000000000000000000000dEaD` if called by the deployer, otherwise the deployer's address**_
 ![screen shot of Remix](homework3_solution2.png)
-![screen shot of Remix](homework3_solution3.png)
 
