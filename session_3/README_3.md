@@ -26,3 +26,34 @@ _**Add a variable to hold the address of the deployer of the contract, update th
 _**Write an external function to return address `0x000000000000000000000000000000000000dEaD` if called by the deployer, otherwise the deployer's address**_
 ![screen shot of Remix](homework3_solution2.png)
 
+  ```
+// SPDX-License-Identifier: None
+pragma solidity 0.8.17;
+
+contract BootcampContract {
+    uint256 number;
+    address public owner;
+    address public deadAddress;
+
+    constructor (){
+        owner = msg.sender;
+        deadAddress = 0x000000000000000000000000000000000000dEaD;
+    }
+
+    function peekAddress() external view returns(address) {
+        if(msg.sender == owner) {
+            return deadAddress;
+        } else {
+            return owner;
+        }
+    }
+    
+    function store(uint256 num) public {
+        number = num;
+    }
+
+    function retrieve() public view returns(uint256) {
+        return number;
+    }
+}
+  ```
