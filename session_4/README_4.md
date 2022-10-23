@@ -75,6 +75,7 @@ _**Write an external function to return address `0x00000000000000000000000000000
 ![screen shot of Remix](Solutions/homework4_solution2a.png)
 
 _**It would be useful to broadcast a change in the total supply. Create an `event` that emits the new value whenever the total supply changes. When the supply changes, emit this event**_
+
 Event emitted as logged
   ```
 [
