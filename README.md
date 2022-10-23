@@ -121,3 +121,5 @@ See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_2/README_2.md)
 # Session 3, 19 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_3/README_3.md)
+# Session 4, 20 Oct 2022
+See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_4/README_4.md)
