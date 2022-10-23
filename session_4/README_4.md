@@ -168,7 +168,9 @@ _**We want to have a payments array for each user sending the payment. Create a 
     mapping(address => Payment) payments;
   ```
 
-## Complete Code
+## Complete Code and results
+![screen shot of Remix](Solutions/homework4_solution3.png)
+
   ```
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
