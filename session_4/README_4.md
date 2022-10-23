@@ -175,12 +175,13 @@ _**We want to have a payments array for each user sending the payment. Create a 
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
+// Encode Club bootcamp homework - 4
 contract VolcanoCoin {
     uint256 totalSupply = 10000;    // initial supply of Volcano coins
     address public owner;           // deployer of the contract
     mapping(address => uint256) public usersBalances;  // keep track of amount of coins of each user
     event totalSupplyChanged(string, uint256);
-    event amountTransferred(uint256, address);
+    event amountTransferred(uint256, address indexed, address indexed);
     struct Payment{
         uint256 amount;
         address recipient;
@@ -194,17 +195,18 @@ contract VolcanoCoin {
     }
 
     constructor() {
-        owner = msg.sender;
-        usersBalances[owner] = totalSupply;
+        owner = msg.sender;                 // set deployer to be owner
+        usersBalances[owner] = totalSupply; // assign all available coins to owner
     }
 
     function getTotalSupply() public view returns(uint256){
         return totalSupply;
     }
 
-    function incrTotalSupply() public onlyOwner{
+    function incrTotalSupply() public onlyOwner{ // only the owner can increase total supply of coins
         totalSupply += 1000;
         emit totalSupplyChanged("new totalSupply =", totalSupply);
+        usersBalances[owner] += 1000;   // assign new minted coins to owner
     }
 
     function getBalance(address user) public view returns(uint256) {
@@ -213,9 +215,11 @@ contract VolcanoCoin {
     }
 
     function transfer(uint256 _amount, address recipient) public {
+        // xfer _amount coins from msg.sender to recipient
         require(usersBalances[msg.sender] >= _amount, "not enough balance to transfer");
         usersBalances[msg.sender] -= _amount;
         usersBalances[recipient] += _amount;
+        emit amountTransferred(_amount, msg.sender, recipient);
     }
 }
   ```
