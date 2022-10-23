@@ -60,9 +60,10 @@ should log the amount and the recipient address.
 that stores the transfer amount and the recipient's address
 19. We want to have a payments array for each user sending the payment. Create a
 `mapping` which returns an array of Payment structs when given this user's address.
-Resources
-Official Solidity Documentation: https://docs.soliditylang.org/en/latest/
-Globally Available Variables: https://docs.soliditylang.org/en/v0.8.6/units-and-global-variables.html
+
+_**Resources:**_
+- Official Solidity Documentation: https://docs.soliditylang.org/en/latest/
+- Globally Available Variables: https://docs.soliditylang.org/en/v0.8.6/units-and-global-variables.html
 
 
 ## Solution
@@ -76,8 +77,9 @@ _**Write an external function to return address `0x00000000000000000000000000000
 
 _**It would be useful to broadcast a change in the total supply. Create an `event` that emits the new value whenever the total supply changes. When the supply changes, emit this event**_
 
-Event emitted as logged
-  ```
+- Event emitted as logged
+
+```
 [
 	{
 		"from": "0x5FD6eB55D12E759a21C09eF703fe0CBa1DC9d88D",
@@ -89,10 +91,10 @@ Event emitted as logged
 		}
 	}
 ]
-  ```
+```
 
-Code at this stage
-  ```
+- Code at this stage
+```
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
@@ -125,17 +127,93 @@ contract VolcanoCoin {
         emit totalSupplyChanged("new totalSupply =", totalSupply);
     }
 }
+```
+_**In order to keep track of user balances, we need to associate a user's address with the balance that they have. What is the best data structure to hold this association? Using your choice of data structure, set up a variable called `balances` to keep track of the number of volcano coins that a user has.**_
+
+- _**Answer**_: use a `mapping`. Like this
+  ```
+  mapping(address => uint256) public usersBalances;
+  ```
+_**We want to allow the `balances` variable to be read from the contract, there are 2 ways to do this. What are those ways? Use one of the ways to make your `balances` variable visible to users of the contract.**_
+
+- _**Answer**_: in the contract, add a getter function, or make the mapping public, for Solidity to insert automatically a getter function.
+
+_**Now change the constructor, to give all of the total supply to the owner of the contract.**_
+  ```
+constructor() {
+    owner = msg.sender;
+    usersBalances[owner] = totalSupply;
+}
+  ```
+_**Now add a public function called `transfer` to allow a user to transfer their tokens to another address. This function should have 2 parameters: the amount to transfer and the recipient address.**_
+
+_**Why do we not need the sender's address here?**_
+
+- Because the sender's address is already a Solidity construct.
+
+_**What would be the implication of having the sender's address as a parameter?**_
+
+- Anybody knowing the sender's address could pretend to be the sender and transfer the coins.
+
+_**Add an event to the transfer function to indicate that a transfer has taken place, it should log the amount and the recipient address. We want to keep a record for each user's transfers. Create a struct called `Payment` that stores the transfer amount and the recipient's address**_
+  ```
+    event amountTransferred(uint256, address);
+    struct Payment{
+        uint256 amount;
+        address recipient;
+    };
+  ```
+_**We want to have a payments array for each user sending the payment. Create a `mapping` which returns an array of Payment structs when given this user's address.**_
+  ```
+    mapping(address => Payment) payments;
   ```
 
-  TO BE CONTINUED
-
-### Code
+## Complete Code
   ```
-// SPDX-License-Identifier: None
-pragma solidity 0.8.17;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
 
 contract VolcanoCoin {
-    ...
-    ...
+    uint256 totalSupply = 10000;    // initial supply of Volcano coins
+    address public owner;           // deployer of the contract
+    mapping(address => uint256) public usersBalances;  // keep track of amount of coins of each user
+    event totalSupplyChanged(string, uint256);
+    event amountTransferred(uint256, address);
+    struct Payment{
+        uint256 amount;
+        address recipient;
+    }
+    mapping(address => Payment) payments;
+
+    modifier onlyOwner() {
+        if(msg.sender == owner) {
+            _;
+        }
+    }
+
+    constructor() {
+        owner = msg.sender;
+        usersBalances[owner] = totalSupply;
+    }
+
+    function getTotalSupply() public view returns(uint256){
+        return totalSupply;
+    }
+
+    function incrTotalSupply() public onlyOwner{
+        totalSupply += 1000;
+        emit totalSupplyChanged("new totalSupply =", totalSupply);
+    }
+
+    function getBalance(address user) public view returns(uint256) {
+        // get the balance of a given user
+        return usersBalances[user];
+    }
+
+    function transfer(uint256 _amount, address recipient) public {
+        require(usersBalances[msg.sender] >= _amount, "not enough balance to transfer");
+        usersBalances[msg.sender] -= _amount;
+        usersBalances[recipient] += _amount;
+    }
 }
   ```
