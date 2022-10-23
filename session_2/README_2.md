@@ -80,3 +80,15 @@ This account is a null address. It is commonly used by projects to burn tokens (
 
 _**Using Remix, add this contract as a source file, compile the contract, deploy the contract to the Remix VM environment.**_
 ![screen shot of Remix](homework2_solution.png)
+# 2.3	The big picture, for beginners
+I received from a beginner an excellent question about Remix and Solidity, and I'll try and answer it here. The question was:
+- _I am watching the classes and I can perfectly follow and understand the solidity language, its sintaxis, and its semantics. BUT, I really am not able to understand this: - What the hell are we creating? (sorry for the expression, just to put some drama xD). We are creating an smart contract, ok. But this contract just looks like some spaces that we have to fill in and then hit a button, so that what we just wrote appears in another space. (What is that and what is its usefulness? Is it really a useful smart contract?)_
+  
+My answer:
+- Solidity is a faceless environment. So we have no way to interact with it, except write our own interface GUI.
+Remix offers us an integrated environment, including the GUI that we'd have to write if it didn't exist.
+
+- So what this smart contract is doing is only to store a value and create automatically a "getter function" to display public variables. The buttons and the GUI are not Solidity, they are Remix's GUI.
+- Little by little, you'll learn how to make the smart contract part more complex, and you'll learn how to protect yourself against exploits when your smart contract becomes complex. Hopefully, you'll also learn to use frameworks like **Hardhat**, **Truffle** and **Foundry** to make more sexy GUIs than the Remix's. Then after the bootcamp, you may want to learn by yourself how to make a mobile app serving as GUI.
+  
+![screen shot of Remix](homework2_solution2.png)

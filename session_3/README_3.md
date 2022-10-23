@@ -1,5 +1,5 @@
 # Session 3, Project-ETHDenver-bootcamp
-20 October 2022
+19 October 2022
 # Zoom session
 
 * 147 attendants
@@ -21,11 +21,11 @@ To the contract of previous session,
 
 ## Solution
 _**Add a variable to hold the address of the deployer of the contract, update that variable with the deployer's address when the contract is deployed.**_
-![screen shot of Remix](homework3_solution1.png)
+![screen shot of Remix](Solutions/homework3_solution1.png)
 
 _**Write an external function to return address `0x000000000000000000000000000000000000dEaD` if called by the deployer, otherwise the deployer's address**_
-![screen shot of Remix](homework3_solution2.png)
-
+![screen shot of Remix](Solutions/homework3_solution2.png)
+### Code
   ```
 // SPDX-License-Identifier: None
 pragma solidity 0.8.17;
