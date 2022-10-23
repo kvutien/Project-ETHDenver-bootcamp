@@ -92,3 +92,7 @@ Remix offers us an integrated environment, including the GUI that we'd have to w
 - Little by little, you'll learn how to make the smart contract part more complex, and you'll learn how to protect yourself against exploits when your smart contract becomes complex. Hopefully, you'll also learn to use frameworks like **Hardhat**, **Truffle** and **Foundry** to make more sexy GUIs than the Remix's. Then after the bootcamp, you may want to learn by yourself how to make a mobile app serving as GUI.
   
 ![screen shot of Remix](homework2_solution2.png)
+
+This drawing shows how Remix compares with other development tools. In addition, Remix requires no installation and doesn't depend on the local operating system.
+
+![screen shot of Remix](20221018%20Dev%20tools.png)
