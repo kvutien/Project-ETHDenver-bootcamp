@@ -68,13 +68,28 @@ Globally Available Variables: https://docs.soliditylang.org/en/v0.8.6/units-and-
 ## Solution
 _**In Remix, create a new file. Define the pragma compiler version. Before the pragma version, add a license identifer . Create a contract called VolcanoCoin. Create a variable to hold the total supply of 10000. Make a public function that returns the total supply. Make a public function that can increase the total supply. Inside the function, add 1000 to the current total supply.**_
 
-![screen shot of Remix](Solutions/homework4_solution1a.png)
+![screen shot of Remix](Solutions/homework4_solution1c.png)
 
 _**Write an external function to return address `0x000000000000000000000000000000000000dEaD` if called by the deployer, otherwise the deployer's address**_
 
 ![screen shot of Remix](Solutions/homework4_solution2a.png)
 
 _**It would be useful to broadcast a change in the total supply. Create an `event` that emits the new value whenever the total supply changes. When the supply changes, emit this event**_
+Event emitted as logged
+  ```
+[
+	{
+		"from": "0x5FD6eB55D12E759a21C09eF703fe0CBa1DC9d88D",
+		"topic": "0xb1b0d26955e375136ca55bac4ef6b90b41a617dc655cca6436931ba3a836e769",
+		"event": "totalSupplyChanged",
+		"args": {
+			"0": "new totalSupply =",
+			"1": "11000"
+		}
+	}
+]
+  ```
+
 Code at this stage
   ```
 // SPDX-License-Identifier: UNLICENSED
