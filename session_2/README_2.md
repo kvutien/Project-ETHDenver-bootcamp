@@ -47,36 +47,36 @@ _**What do these transactions do?**_
   ```
 	1. 0x0ec3f2488a93839524add10ea229e773f6bc891b4eb4794c3337d4495263790b
   ```
-Transaction was done on Jun-17-2016 03:34:48 AM +UTC. It created the famous "The DAO". 
+* Transaction was done on Jun-17-2016 03:34:48 AM +UTC. It created the famous "The DAO". 
   ```
 	2. 0x4fc1580e7f66c58b7c26881cce0aab9c3509afe6e507527f30566fbf8039bcd0
   ```
-Transaction created the famous "Uniswap V2", name is " UniswapV2Router02", compiler version is v0.6.6+commit.6c089d02. The source code is at https://etherscan.io/address/0x7a250d5630b4cf539739df2c5dacb4c659f2488d 
+* Transaction created the famous "Uniswap V2", name is " UniswapV2Router02", compiler version is v0.6.6+commit.6c089d02. The source code is at https://etherscan.io/address/0x7a250d5630b4cf539739df2c5dacb4c659f2488d 
   ```
 	3. 0x552bc0322d78c5648c5efa21d2daa2d0f14901ad4b15531f1ab5bbe5674de34f
   ```
-Transaction was done on Aug-10-2021 04:05:47 PM +UTC. It was a hack of PolyNetwork BTC to ETH bridge, where USD 610M were stolen. See twitter: https://twitter.com/PolyNetwork2/status/1425073987164381196. and explanation by Kudelski Security: https://research.kudelskisecurity.com/2021/08/12/the-poly-network-hack-explained/. and wikipedia: https://en.wikipedia.org/wiki/Poly_Network_exploit.
+* Transaction was done on Aug-10-2021 04:05:47 PM +UTC. It was a hack of PolyNetwork BTC to ETH bridge, where USD 610M were stolen. See twitter: https://twitter.com/PolyNetwork2/status/1425073987164381196. and explanation by Kudelski Security: https://research.kudelskisecurity.com/2021/08/12/the-poly-network-hack-explained/. and wikipedia: https://en.wikipedia.org/wiki/Poly_Network_exploit.
   ```
 	4. 0x7a026bf79b36580bf7ef174711a3de823ff3c93c65304c3acc0323c77d62d0ed
   ```
-Transaction was done on Aug-12-2021 02:52:12 PM +UTC. It is where the PolyNetwork hackers returned USD 340M. This transaction is a payment using the stable coin "Maker DAI", name is "DAI", compiler version is v0.5.12+commit.7709ece9. The source code is at https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f 
+* Transaction was done on Aug-12-2021 02:52:12 PM +UTC. It is where the PolyNetwork hackers returned USD 340M. This transaction is a payment using the stable coin "Maker DAI", name is "DAI", compiler version is v0.5.12+commit.7709ece9. The source code is at https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f 
   ```
 	5. 0x814e6a21c8eb34b62a05c1d0b14ee932873c62ef3c8575dc49bcf12004714eda
   ```
-Transaction was done on Aug-19-2021 02:31:31 AM +UTC. It's the same Polynetwork exploit. It's probably where the hacker returned the remaining stolen money.
+* Transaction was done on Aug-19-2021 02:31:31 AM +UTC. It's the same Polynetwork exploit. It's probably where Polynetwork rewarded a bounty to the hacker who returned almost all the money.
 
 _**What is the largest account balance you can find ?**_
-No clue
+* No clue
 
 _What is special about these accounts :_
   ```
 	0x1db3439a222c519ab44bb1144fc28167b4fa6ee6
   ```
-Looks like a miner's account. The balance dropped after the Merge. Or something related to Uniswap V2.
+* This is the address of Vitalik Buterin's account.
   ```
 	0x000000000000000000000000000000000000dEaD
   ```
-This account is a null address. It is commonly used by projects to burn tokens (reducing total supply).
+* This account is a null address. It is commonly used by projects to burn tokens (reducing total supply).
 
 _**Using Remix, add this contract as a source file, compile the contract, deploy the contract to the Remix VM environment.**_
 ![screen shot of Remix](homework2_solution.png)
