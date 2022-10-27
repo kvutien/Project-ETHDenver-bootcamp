@@ -47,6 +47,8 @@ struct Payment{
     uint256 amount;
     address recipient;
 }
+mapping(address => Payment) public payments;    // cheat: not yet an array. Only last payment is recorded
+
 ```
 - The function `recordPayment` is
 ```
@@ -88,7 +90,7 @@ contract VolcanoCoin {
         uint256 amount;
         address recipient;
     }
-    mapping(address => Payment) public payments;
+    mapping(address => Payment) public payments;    // cheat: not yet an array. Only last payment is recorded
 
     modifier onlyOwner() {
         if(msg.sender == owner) {
