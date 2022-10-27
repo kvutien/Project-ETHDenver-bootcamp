@@ -7,9 +7,10 @@
 * The zoom recording of 24th October: https://youtu.be/Tl1uQrG6A8w
 * Session 5 useful links:
 
-https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
-
-https://docs.openzeppelin.com/contracts/2.x/access-control
+    * https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
+    * https://docs.openzeppelin.com/contracts/2.x/access-control
+    * https://goerli.net/
+    * https://goerli-faucet.pk910.de/
 
 # Homework
 ## Assignment: 
