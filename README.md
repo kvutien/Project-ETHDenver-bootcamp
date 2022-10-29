@@ -115,17 +115,19 @@ Make the changes save, test, commit and push to your own Github repository. List
      2423751..1fede1e  main -> main
   ```
 
-# Session 1, 17 Oct 2022
+# Session 1: Introduction, logistics, history, 17 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_1/README_1.md)
-# Session 2, 18 Oct 2022
+# Session 2: PoW-PoS, Etherscan, Remix, 18 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_2/README_2.md)
-# Session 3, 19 Oct 2022
+# Session 3: Solidity, 19 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_3/README_3.md)
-# Session 4, 20 Oct 2022
+# Session 4: Solidity continued, 20 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_4/README_4.md)
-# Session 5, 24 Oct 2022
+# Session 5: EVM architecture, storage, test networks, 24 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_5/README_5.md)
-# Session 6, 25 Oct 2022
+# Session 6: Team game, Treasure Chest, 25 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_6/README_6.md)
-# Session 7, 26 Oct 2022
+# Session 7: Poly Network exploit & best security practices, 26 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_7/README_7.md)
+# Session 8: DAO exploit & dev deployment tools, 27 Oct 2022
+See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_8/README_8.md)

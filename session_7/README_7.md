@@ -1,7 +1,7 @@
 # Session 7, Project-ETHDenver-bootcamp
 26 October 2022
 # Zoom session
-* 129 attendants, Blmockchain security
+* 129 attendants, Blockchain security
   * explanation of the solution to the team game the day before
   * explanation of the Poly Network exploit in August 2021
   * best practices to avoid exploits
@@ -73,7 +73,7 @@ function transfer(uint256 _amount, address _recipient) public {
     emit amountTransferred(_amount, " to ", _recipient);
 }
 ```
-### Full Code and result
+## Full Code and result
 ![screen shot of Remix](Solutions/homework7_solution.png)
 ```
 // SPDX-License-Identifier: UNLICENSED
