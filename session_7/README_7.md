@@ -50,6 +50,8 @@ struct Payment{
 mapping(address => Payment) public payments;    // cheat: not yet an array. Only last payment is recorded
 
 ```
+- ***Cheat warning***: the current implementation does not yet use an array. Only last payment is recorded. To create an array of payments for each user, see https://docs.soliditylang.org/en/v0.4.21/types.html#arrays.
+
 - The function `recordPayment` is
 ```
 function recordPayment(address _sender, uint256 _amount, address _recipient) public{
