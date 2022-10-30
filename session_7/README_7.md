@@ -137,9 +137,9 @@ contract VolcanoCoin {
         emit amountTransferred(_amount, " to ", _recipient);
     }
 
-    function getUserPayment(address _user) view public returns(uint256, address){
-        // get the latest payment of an user
+    function getUserLatestPayment(address _user) view public returns(uint256, address){
         require(_user != address(0x00), "this user has null address");
+        // get the latest payment of an user
         return (payments[_user].amount, payments[_user].recipient);
     }
 }
