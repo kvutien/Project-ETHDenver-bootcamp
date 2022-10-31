@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "hardhat/console.sol";                       // use hardhat to send message to console
 
 contract VolcanoCoin {
-    uint256 totalSupply = 10000;                    // initial supply of Volcano coins
+    uint256 public totalSupply = 10000;                    // initial supply of Volcano coins
     address public owner;                           // deployer of the contract
     mapping(address => uint256) public usersBalances;  // keep track of amount of coins of each user
     event totalSupplyChanged(string, uint256);

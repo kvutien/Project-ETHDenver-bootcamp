@@ -24,30 +24,33 @@ describe("Test VolcanoCoin contract", function () {
   }
 
   // Tests starts here
+  describe("Initial supply of Volcano coins", function(){
   // test that initial supply is 10000
-  describe("Should 10000 be initial supply of Volcano coins", function(){
     it("Should have 10000 as initial supply", async function(){
-      const [volcanoCoin] = await loadFixture(deployVolcanoCoinFixture);
-      expect(await volcanoCoin.totalSupply().to.equal(10000));
-    });
-
-  // test that total supply can be incremented by steps of 1000
-  it("should increment oldValue by 1000 for newValue", async function(){
-      const [volcanoCoin] = await loadFixture(deployVolcanoCoinFixture);
-      oldValue = await volcanoCoin.totalSupply;
-      newValue = oldValue +1000;
-      volcanoCoin.incrTotalSupply();
-      expect(await volcanoCoin.totalSupply().to.equal(newValue));
-    });
-
-  // test that the "require" condition reverts the transaction
-  it("should fail if other account increments total supply", async function(){
-      const [volcanoCoin, owner, otherAccount] = await loadFixture(deployVolcanoCoinFixture);
-      // change signer of transaction to otherAccount by connect(otherAccount)
-      expect(volcanoCoin.connect(otherAccount).incrTotalSupply().to.be.revertedWith(
-        "only owner can change total supply"
-        ));
+      const {volcanoCoin} = await loadFixture(deployVolcanoCoinFixture);
+      // console.log(volcanoCoin);
+      expect(await volcanoCoin.totalSupply()).to.equal(10000);
     });
   });
 
+  describe("Increment initial supply of Volcano coins", function(){
+    // test that total supply can be incremented by steps of 1000
+    it("should increment oldValue by 1000 for newValue", async function(){
+      const {volcanoCoin} = await loadFixture(deployVolcanoCoinFixture);
+      // ethers.js returns a BigNumber that needs to be casted to a number
+      value = Number(await volcanoCoin.totalSupply());
+      value += 1000;
+      volcanoCoin.incrTotalSupply();
+      expect(Number(await volcanoCoin.totalSupply())).to.equal(value);
+    });
+
+  // test that the "require" condition reverts the transaction
+    it("should fail if other account increments total supply", async function(){
+      const {volcanoCoin, owner, otherAccount} = await loadFixture(deployVolcanoCoinFixture);
+      // change signer of transaction to otherAccount by connect(otherAccount)
+      expect(volcanoCoin.connect(otherAccount).incrTotalSupply()).to.be.revertedWith(
+        "only owner can change total supply"
+        );
+    });
+  });
 });
