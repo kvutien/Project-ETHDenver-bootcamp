@@ -32,28 +32,28 @@ You can use the gitpod workspace (not populated by Encode yet):
 ## Solution using Hardhat - Create a project for your Volcano coin
 ### Install Hardhat
 I check my versions of nodeJS and npm.
-```
+```sh
 kvutien@MBP21VTK ~ % node --version
 v16.15.1
 kvutien@MBP21VTK ~ % npm --version
 8.11.0
 ```
 I install Hardhat locally inside the folder *Project-ETHDenver-bootcamp* managed by git. For this doing, I create the folder, I move to it, I install a `npm` environment and I install Hardhat in this `npm`:
-```
+```sh
 kvutien@MBP21VTK ~ % cd /Users/kvutien/develop/hackhathons/ETHDenver_2022\ bootcamp/Bootcamp_repo/Project-ETHDenver-bootcamp
 kvutien@MBP21VTK Project-ETHDenver-bootcamp % mkdir volcanocoin && cd volcanocoin
 kvutien@MBP21VTK volcanocoin % npm init --yes
 kvutien@MBP21VTK volcanocoin % npm install --save-dev hardhat
 ```
 I create a default Hardhat project (I hit "enter" to all questions): 
-```
+```sh
 kvutien@MBP21VTK volcanocoin % npx hardhat
 ```
 VScode shows us the current folder content:
 ![screen shot of Remix](Solutions/homework8_solution.png)
 
 Because we installed Hardhat specifically today, the latest Solidity compiler is in the `hardhat.config.js`
-```
+```js
 require("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -67,7 +67,7 @@ The folder of the Hardhat project has by default a `contracts` folder with a sam
 **Note:** You may see a VSCode red wiggle on the instruction import `hardhat/console.sol`; and a tooltip box saying "Source "*hardhat/console.sol" not found: File import callback not supported*". As we'll see below, Hardhat compiles it perfectly.
 
 To compile the contract run `npx hardhat compile` in your terminal. The compile task is one of the Hardhat built-in tasks.
-```
+```sh
 kvutien@MBP21VTK volcanocoin% npx hardhat compile
 Downloading compiler 0.8.17
 Compiled 3 Solidity files successfully
@@ -83,7 +83,7 @@ For this we're going to use `hardhat-network-helper` to interact with Hardhat Ne
 Our Hardhat project has also by default a `test` folder with a test program `Lock.js` that we see later. Let's create our test program `Volcanocoin-test.js`.
 
 Let's start with the code below. We'll explain it next, but for now paste this into `Volcanocoin-test.js`:
-```
+```js
 // Hardhat test script of VolcanoCoin contract, Oct 2022
 // ETHDenver Solidity Bootcamp - Vu Tien Khang, Machu Picchu
 
