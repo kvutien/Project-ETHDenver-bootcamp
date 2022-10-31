@@ -112,6 +112,13 @@ contract VolcanoCoin {
         return totalSupply;
     }
 
+    function incrTotalSupply() public /*onlyOwner*/ {
+        // beginner exercise, increment total supply by step of 1000, revert if not owner
+        require(msg.sender == owner, "only owner can change total supply");
+        totalSupply += 1000;
+        emit totalSupplyChanged("new totalSupply =", totalSupply);
+    }
+
     function getBalance(address user) public view returns(uint256) {
         // view the balance of a given user
         return usersBalances[user];
