@@ -28,7 +28,6 @@ describe("Test VolcanoCoin contract", function () {
   // test that initial supply is 10000
     it("Should have 10000 as initial supply", async function(){
       const {volcanoCoin} = await loadFixture(deployVolcanoCoinFixture);
-      // console.log(volcanoCoin);
       expect(await volcanoCoin.totalSupply()).to.equal(10000);
     });
   });
