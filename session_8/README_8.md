@@ -4,7 +4,7 @@
 * 123 attendants, DAO exploit
   * solution to the homework
   * contract deployment tools: Remix, Hardhat, Foundry, Truffle and others
-* The zoom recording of 26th October: 
+* The zoom recording of 26th October: https://youtu.be/1wxf7xgUuj8
 * Session 8 useful links:
     - •	https://github.com/wighawag/hardhat-deploy: script engine to automate Hardhat deployment steps
     - https://book.getfoundry.sh/: Foundry documentation homepage
