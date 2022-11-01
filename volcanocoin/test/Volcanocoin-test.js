@@ -35,7 +35,8 @@ describe("Test VolcanoCoin contract", function () {
   describe("Increment initial supply of Volcano coins", function(){
     // test that total supply can be incremented by steps of 1000
     it("should increment oldValue by 1000 for newValue", async function(){
-      const {volcanoCoin} = await loadFixture(deployVolcanoCoinFixture);
+      const {volcanoCoin, owner, otherAccount} = await loadFixture(deployVolcanoCoinFixture);
+      console.log("     ", volcanoCoin.address, owner._address, otherAccount._address);
       // ethers.js returns a BigNumber that needs to be casted to a number
       value = Number(await volcanoCoin.totalSupply());
       value += 1000;
@@ -44,10 +45,18 @@ describe("Test VolcanoCoin contract", function () {
     });
 
   // test that the "require" condition reverts the transaction
-    it("should fail if other account increments total supply", async function(){
+    it("should revert if other account increments total supply", async function(){
       const {volcanoCoin, owner, otherAccount} = await loadFixture(deployVolcanoCoinFixture);
       // change signer of transaction to otherAccount by connect(otherAccount)
       expect(volcanoCoin.connect(otherAccount).incrTotalSupply()).to.be.revertedWith(
+        "only owner can change total supply"
+        );
+    });
+    it("shouldn't revert if owner account increments total supply", async function(){
+      const {volcanoCoin, owner, otherAccount} = await loadFixture(deployVolcanoCoinFixture);
+      console.log("     ", owner._address, otherAccount._address);
+      // change signer of transaction to owner by connect(owner)
+      expect(volcanoCoin.connect(owner).incrTotalSupply()).to.be.revertedWith(
         "only owner can change total supply"
         );
     });

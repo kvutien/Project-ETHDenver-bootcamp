@@ -131,3 +131,5 @@ See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_7/README_7.md)
 # Session 8: DAO exploit & dev deployment tools, 27 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_8/README_8.md)
+# Session 9: etherjs, 31 Oct 2022
+See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_9/README_9.md)
