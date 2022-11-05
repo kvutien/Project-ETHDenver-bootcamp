@@ -193,7 +193,7 @@ Index events
 ####	Optimize function `updatePayment`
 
 Optimize arguments
-- move to calldata the arguments `_user`, `_ID, `_amount`, `_type`: this is not correct because memory and calldata can only be specified for arrays, structs and mappings.
+- move to calldata the arguments `_user`, `_ID, `_amount`, `_type`: this is not correct because `memory` and `calldata` can only be specified for arrays, structs and mappings.
 
 
 ... ***To be continued*** 
