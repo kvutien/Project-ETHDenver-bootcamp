@@ -134,8 +134,8 @@ See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp
 # Session 9: etherjs, 31 Oct 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_9/README_9.md)
 # Session 10: 1 Nov 2022
-(TODO) See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_9/README_9.md)
+See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_10/README_10.md)
 # Session 11: 2 Nov 2022
-(TODO) See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_9/README_9.md)
+See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_11/README_11.md)
 # Session 12: 3 Nov 2022
 See [corresponding folder](https://github.com/kvutien/Project-ETHDenver-bootcamp/tree/main/session_12/README_12.md)
