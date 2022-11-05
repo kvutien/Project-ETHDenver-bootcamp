@@ -10,6 +10,8 @@
   * optimization on deployment costs or on runtime costs, use of Remix,
   * optimization on use of customized errors, on use of events instead of storage
   * measuring tool giving a table of gas costs per function inside contract sol2UML, see https://medium.com/@kccmeky/how-to-create-uml-class-diagram-from-your-solidity-contract-6bc050016da8
+  * github of Sol2UML tool: https://github.com/naddison36/sol2uml
+
 * The zoom recording of 3rd November: https://youtu.be/GKwEYAU-FWQ
 * Session 12 useful links:
     - https://docs.soliditylang.org/en/v0.8.17/internals/optimizer.html: Solidity optimizer docs
@@ -63,7 +65,6 @@ In order to generate storage diagram, run the following command:
 Useful links:
 - https://github.com/ExtropyIO/SolidityBootcamp/tree/main/Exercises/Gas: actual exercise code to optimize
 - measuring tool giving a table of gas costs per function inside contract sol2UML, see https://medium.com/@kccmeky/how-to-create-uml-class-diagram-from-your-solidity-contract-6bc050016da8
-- github of Sol2UML tool: https://github.com/naddison36/sol2uml
 
 ## Solution 
 ### Preparation
