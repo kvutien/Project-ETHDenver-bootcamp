@@ -10,6 +10,7 @@
     - https://gitpod.io/workspaces/: *(homework 8)* gitpod page
     - https://remix-ide.readthedocs.io/en/latest/unittesting_examples.html: *(homework 8)* documentation Remix test
     - https://www.youtube.com/watch?v=p7yjjynRJAQ&t=199s: (homework 8) YouTube demo of Remix testing
+    - https://www.youtube.com/watch?v=ngxWWS3Qr3Q: explanation of ERC 1155, multi-tokens, fungible and non-fungible
     - https://docs.openzeppelin.com/contracts/2.x/api/token/erc721: *(homework 9)* Open Zeppelin documentation of the library ERC721 that is used to manage NFTs
     - https://coinsbench.com/how-to-write-a-simple-nft-erc-721-contract-with-open-zeppelin-9b47b44803a9: *(homework 9)* examples of NFT code with Open Zeppelin libraries
     - https://ethereum.stackexchange.com/questions/97186/what-is-the-reason-behind-writing-using-counters-for-counters-counters-when-us: *(homework 9)* explanation of a special instruction (using Counters for Counters.Counter) in Open Zeppelin.
