@@ -63,6 +63,7 @@ In order to generate storage diagram, run the following command:
 Useful links:
 - https://github.com/ExtropyIO/SolidityBootcamp/tree/main/Exercises/Gas: actual exercise code to optimize
 - measuring tool giving a table of gas costs per function inside contract sol2UML, see https://medium.com/@kccmeky/how-to-create-uml-class-diagram-from-your-solidity-contract-6bc050016da8
+- github of Sol2UML tool: https://github.com/naddison36/sol2uml
 
 ## Solution 
 ### Preparation
