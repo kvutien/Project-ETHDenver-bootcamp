@@ -124,7 +124,7 @@ Compiled 2 Solidity files successfully
 ```
 **(table to be formatted)**
 
-|----------------------------------|----------------------------|-------------|-----------------------------|
+| -------------------------------- | -------------------------- | ----------- | --------------------------- |
 |       Solc version: 0.8.0        |  Optimizer enabled: false  |  Runs: 200  |  Block limit: 30000000 gas  │
 |··································|····························|·············|·····························|
 |  Methods                                                                                                  │
@@ -193,7 +193,7 @@ Index events
 ####	Optimize function `updatePayment`
 
 Optimize arguments
-- move to calldata the arguments `_user`, `_ID, `_amount`, `_type`: this is not correct because memory and calldata can only be specified for arrays, structs a,d mappings.
+- move to calldata the arguments `_user`, `_ID, `_amount`, `_type`: this is not correct because memory and calldata can only be specified for arrays, structs and mappings.
 
 
 ... ***To be continued*** 
