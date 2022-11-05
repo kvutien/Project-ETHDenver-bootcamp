@@ -149,6 +149,11 @@ Compiled 2 Solidity files successfully
   9 passing (35s)
 Note that all the gas costs are like in the example screen except for the function whiteTransfer.
 ```
+### Unusual optimization technique
+To comply strictly with the rules of the game, a bootcamp participant simply stripped off all the code that do not contribute directly to satisfy the tests. This gives a smart contract that isn't of much use but all the tests pass, which is the rule of the game 🙂.
+
+This highlights a very good approach when programming Solidity: (1) code the tests that are representative of the usefulness of the contract (2) code only in Solidity the strict minimum to pass the tests.
+
 #### Usual optimization techniques
 See https://www.alchemy.com/overviews/solidity-gas-optimization.
 
