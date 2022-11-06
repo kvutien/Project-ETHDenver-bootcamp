@@ -156,7 +156,7 @@ kvutien@MBP21VTK volcanocoin % npx hardhat test
 ## Detailed Explanation of Code 
 
 ###	Testing the tests
-Note that the code below includes liberally console.log to check the values. The purpose is to test the test.js code. This avoids that an error in the test function declares valid a bad logic in the smart contract.
+Note that the code below includes liberally `console.log` to check the values. The purpose is to test the `test.js` code. This avoids that an error in the test function declares valid a bad logic in the smart contract.
 ### The fixture to deploy VolcanoCoin
 This preparation step is called to set up the environment of each test.
 ```js
