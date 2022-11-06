@@ -1,4 +1,5 @@
-// Hardhat test script of VolcanoCoin contract, Oct 2022
+// Hardhat test script of VolcanoCoin contract, 6 Nov 2022
+//    I'm using console.log to test the tests :)
 // ETHDenver Solidity Bootcamp - Vu Tien Khang, Machu Picchu
 
 const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
@@ -16,8 +17,11 @@ describe("Test VolcanoCoin contract", function () {
   async function deployVolcanoCoinFixture (){
     // Contracts are deployed using the first signer/account by default
     const [owner, otherAccount] = await ethers.getSigners();
-    // Obtain the descriptor (ABI etc.) of the VolcanoCoin contract
+    console.log("       -owner ==>", owner.address);
+    console.log("       -otherAccount==>", otherAccount.address);
+    // obtain the descriptor (ABI etc.) of the VolcanoCoin contract
     const VolcanoCoin = await ethers.getContractFactory("VolcanoCoin");
+    // deploy the contract
     const volcanoCoin = await VolcanoCoin.deploy();
     // return contract address and private key of other account than owner
     return {volcanoCoin, owner, otherAccount};
@@ -28,7 +32,10 @@ describe("Test VolcanoCoin contract", function () {
   // test that initial supply is 10000
     it("Should have 10000 as initial supply", async function(){
       const {volcanoCoin} = await loadFixture(deployVolcanoCoinFixture);
+      const totalSupply = await volcanoCoin.totalSupply();
       expect(await volcanoCoin.totalSupply()).to.equal(10000);
+      // cross-check the test
+      console.log("       -totalSupply ==>", Number(totalSupply));
     });
   });
 
@@ -36,8 +43,7 @@ describe("Test VolcanoCoin contract", function () {
     // test that total supply can be incremented by steps of 1000
     it("should increment oldValue by 1000 for newValue", async function(){
       const {volcanoCoin, owner, otherAccount} = await loadFixture(deployVolcanoCoinFixture);
-      console.log("     ", volcanoCoin.address, owner._address, otherAccount._address);
-      // ethers.js returns a BigNumber that needs to be casted to a number
+      // ethers.js returns a BigNumber that needs to be transformed to a Number
       value = Number(await volcanoCoin.totalSupply());
       value += 1000;
       volcanoCoin.incrTotalSupply();
@@ -51,14 +57,8 @@ describe("Test VolcanoCoin contract", function () {
       expect(volcanoCoin.connect(otherAccount).incrTotalSupply()).to.be.revertedWith(
         "only owner can change total supply"
         );
-    });
-    it("shouldn't revert if owner account increments total supply", async function(){
-      const {volcanoCoin, owner, otherAccount} = await loadFixture(deployVolcanoCoinFixture);
-      console.log("     ", owner._address, otherAccount._address);
-      // change signer of transaction to owner by connect(owner)
-      expect(volcanoCoin.connect(owner).incrTotalSupply()).to.be.revertedWith(
-        "only owner can change total supply"
-        );
-    });
+      console.log("       -owner ==>", owner.address);
+      console.log("       -otherAccount==>", otherAccount.address);
+      });
   });
 });
