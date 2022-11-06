@@ -154,6 +154,9 @@ kvutien@MBP21VTK volcanocoin % npx hardhat test
 ```
 
 ## Detailed Explanation of Code 
+
+###	Testing the tests
+Note that the code below includes liberally console.log to check the values. The purpose is to test the test.js code. This avoids that an error in the test function declares valid a bad logic in the smart contract.
 ### The fixture to deploy VolcanoCoin
 This preparation step is called to set up the environment of each test.
 ```js
@@ -167,11 +170,11 @@ Here we invoke the function `getContractFactory()` with the name of the contract
 ```js
 const volcanoCoin = await VolcanoCoin.deploy();
 ```
-Here we use the `deploy()` function of the JSON `VolcanoCoin`. It returns the address of the contract that we store in `const volcanoCoin` (lower case).
+Here we use the `deploy()` function of the JSON `VolcanoCoin`. It returns the JSON of the contract that we store in `const volcanoCoin` (lower case), as well as the JSON of the `owner` and the `otherAccount`. 
 ```js
 return {volcanoCoin, owner, otherAccount};
 ```
-Once the contract is deployed, the fixture is done and returns the variables we need for the tests.
+Once the contract is deployed, the fixture is done and returns the variables we need for the tests. Note that we return using an object (in curved brackets) instead of an array (in square brackets) because the returned values have different types.
 
 ### The first group of tests
 Each group of tests is enclosed in a block of code materialized by the function `describe`. Each test is defined inside a block of code materialized by the function `it`. The arguments of `it` are a string that describes the test and a piece of executable code inside an anonymous function.
@@ -181,14 +184,14 @@ The first group of tests has only one test.
 const {volcanoCoin} = await loadFixture(deployVolcanoCoinFixture);
 expect(await volcanoCoin.totalSupply()).to.equal(10000);
 ```
-The first instruction sets up the test environment, the second instruction `expect()` checks the logical condition of the test.
+The first instruction sets up the test environment, the second instruction `expect()` checks the logical condition of the test. Note that we use `await` because both functions `loadFixture()` and `volcanoCoin.totalSupply()` are asynchronous.
 ### The second group of tests
 The second group of tests has 2 tests: it checks that it is possible to increment the total supply of coins by 1000 at each call, then it checks that if someone else that the owner tries to increment to total supply, the transaction is reverted.
 ```js
 value = Number(await volcanoCoin.totalSupply());
 value += 1000;
 ```
-Here we retrieve the initial total supply of coins, we add 1000 and keep the result as reference, then we check that, after calling the function, the total amount of coins is equal to this reference. Note that we need to cast the type of the value that `ethers.js` returned to something that the test primitives of `chai` can handle; here it's `Number` because `ethers.js` returns a `BigNumber` representing the `uint256` of Solidity.
+Here we retrieve the initial total supply of coins as a `BigNumber`, we transform it into a normal JavaScript `Number`, we add 1000 and keep the result as reference, then we check that, after calling the function, the total amount of coins is equal to this reference. Note that we need to cast the type of the value that `volcanoCoin.totalSupply()` and `ethers.js` returned to something that the JavaScript test primitives of `chai` can handle; here it's `Number` because `ethers.js` returns a `BigNumber` representing the `uint256` of Solidity.
 ```js
 expect(volcanoCoin.connect(otherAccount).incrTotalSupply()).to.be.revertedWith(
         "only owner can change total supply"
