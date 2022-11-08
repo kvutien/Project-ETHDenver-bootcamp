@@ -153,7 +153,7 @@ Note that all the gas costs are like in the example screen except for the functi
 ### Unusual optimization technique
 To comply strictly with the rules of the game, a bootcamp participant simply stripped off all the code that do not contribute directly to satisfy the tests. This gives a smart contract that isn't of much use but all the tests pass, which is the rule of the game 🙂.
 
-This highlights a very good approach when programming Solidity: (1) code the tests that are representative of the usefulness of the contract (2) code only in Solidity the strict minimum to pass the tests.
+This technique highlights a very good approach when programming Solidity: (1) code the tests that are representative of the usefulness of the contract (2) code only in Solidity the strict minimum to pass the tests.
 
 #### Usual optimization techniques
 See https://www.alchemy.com/overviews/solidity-gas-optimization.
@@ -181,6 +181,7 @@ the user would only need to pay the transaction's fixed gas cost and the gas for
 - Store Data in `calldata` instead of `memory`: instead of copying variables to memory, it is typically more cost-effective to load them immediately from `calldata`. If all you need to do is read data, you can conserve gas by saving the data in `calldata`.
 - Use `immutable` and `constant`: constant variables cannot be changed after being compiled, whereas immutable variables can be set within the constructor.
 - Use the `external` Visibility Modifier: because the `public` visibility modifier is equivalent to using the `external` and `internal` visibility modifier
+-	Use the `error` declaration: starting Solidity v 0.8.4 of April 2021, using the keyword `error` to declare custom errors and referring to it in `revert` costs much less gas when deploying contracts. Also, it's best to limit string size to 32 bytes or multiples of 32 bytes.
 
 Only arrays, struct and mapping can be `calldata` so the arguments are OK.
 

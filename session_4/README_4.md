@@ -7,7 +7,7 @@
 *  Variable types bytes, string. Operator string compare, string concat, bytes concat
 *  Variable types enum, constant, immutable
 *  Keywords: require, assert, revert
-*  Blocks try, catch. Keyword error (Solidity 0.8.4) to define error types for lisibility
+*  Blocks try, catch. custome `error` keyword (Solidity 0.8.4, https://blog.soliditylang.org/2021/04/21/custom-errors/) to define error types for readability and less gas cost to deploy
 *  How to import code from github and npm into Remix. Also imported from Hardhat is logging to console
 
 * The zoom recording of 20th October: https://youtu.be/u0HPyGODIg4

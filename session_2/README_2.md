@@ -4,9 +4,9 @@
 
 * 157 attendants
 * PoW, PoS, consensus engine, execution engine
-* The Merge, slots every 12s, epoch is 21 slots, at each slot one validator is chosen at random to build a block, aggregators are used to lessen the traffic of validators
-* A slot can be empty if the chosen validator doesn't propose a block. In average 0.5% of slots are empty since the Merge
-* First block of an epoch is a checkpoint block. Finalization of transactions of each epoch is reached when last block of next epoch is validated
+  * The Merge, slots every 12s, epoch is 21 slots, at each slot one validator is chosen at random to build a block, aggregators are used to lessen the traffic of validators
+  * A slot can be empty if the chosen validator doesn't propose a block. In average 0.5% of slots are empty since the Merge
+  * First block of an epoch is a checkpoint block. Finalization of transactions of each epoch is reached when last block of next epoch is validated
 * Use of Etherscan
 * Use of Remix
 * Solidity syntax
@@ -19,6 +19,7 @@
   https://sandbox.tenderly.co/
   https://medium.com/codechain/modified-merkle-patricia-trie-how-ethereum-saves-a-state-e6d7555078dd
   https://ethereum.org/en/run-a-node/
+  https://mvpworkshop.co/blog/ethereum-merge-everything-you-need-to-know/: The Merge
 # Homework
 ## Assignment
 
